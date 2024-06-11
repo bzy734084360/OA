@@ -1,4 +1,5 @@
 ﻿using BZY.OA.Model;
+using BZY.OA.Model.Search;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,5 +11,6 @@ namespace BZY.OA.IBLL
     public interface IUserInfoService : IBaseService<UserInfo>
     {
         bool DeleteEntities(List<int> list);
+        IQueryable<UserInfo> LoadSearchEntities(UserInfoSearch userInfoSearch, short delFlag);
     }
 }

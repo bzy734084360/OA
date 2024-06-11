@@ -20,16 +20,16 @@
         $(function () {
             $("#addDiv").css("display", "none");
             $("#editDiv").css("display", "none");
-            ////给搜索按钮加一个单击事件
-            //$("#btnSearch").click(function () {
-            //    //获取用户输入的搜索数据.
-            //    var pars = {
-            //        name: $("#txtSearchName").val(),
-            //        remark: $("#txtSearchRemark").val()
-            //    };
-            //    //将获取的搜索的数据发送到服务端。
-            //    loadData(pars)
-            //});
+            //给搜索按钮加一个单击事件
+            $("#btnSearch").click(function () {
+                //获取用户输入的搜索数据.
+                var pars = {
+                    name: $("#txtSearchName").val(),
+                    remark: $("#txtSearchRemark").val()
+                };
+                //将获取的搜索的数据发送到服务端。
+                loadData(pars)
+            });
             loadData();
         });
 
@@ -259,12 +259,12 @@
 
 </head>
 <body>
-    @*<div>
-        用户名:<input type="text" id="txtSearchName" />&nbsp;&nbsp;备注<input type="text" id="txtSearchRemark" /><a href="#" class="easyui-linkbutton" data-options="iconCls:'icon-search'" style="width:80px" id="btnSearch">Search</a>*@
+    <div>
+        用户名:<input type="text" id="txtSearchName" />&nbsp;&nbsp;备注<input type="text" id="txtSearchRemark" /><a href="#" class="easyui-linkbutton" data-options="iconCls:'icon-search'" style="width:80px" id="btnSearch">Search</a>
 
-    <table id="tt" style="width: 700px;" title="标题，可以使用代码进行初始化，也可以使用这种属性的方式" iconcls="icon-edit">
-    </table>
-    @*</div>*@
+        <table id="tt" style="width: 700px;" title="标题，可以使用代码进行初始化，也可以使用这种属性的方式" iconcls="icon-edit">
+        </table>
+    </div>
     <!--------------添加数据---------------------->
     <div id="addDiv">
         @using (Ajax.BeginForm("AddUserInfo", "UserInfo", new { }, new AjaxOptions() { HttpMethod = "post", OnSuccess = "afterAdd" }, new { id = "addForm" }))

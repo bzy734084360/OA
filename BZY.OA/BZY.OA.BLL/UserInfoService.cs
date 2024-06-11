@@ -1,6 +1,7 @@
 ﻿using BZY.OA.IBLL;
 using BZY.OA.IDAL;
 using BZY.OA.Model;
+using BZY.OA.Model.Search;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -28,6 +29,21 @@ namespace BZY.OA.BLL
                 this.CurrentDBSession.UserInfoDal.DeleteEntity(item);
             }
             return this.CurrentDBSession.SaveChanges();
+        }
+
+        public IQueryable<UserInfo> LoadSearchEntities(UserInfoSearch userInfoSearch, short delFlag)
+        {
+            var temp = this.CurrentDBSession.UserInfoDal.LoadEntities(t => t.DelFlag == delFlag);
+            if (!string.IsNullOrEmpty(userInfoSearch.UserName))
+            {
+                temp = temp.Where(t => t.UName.Contains(userInfoSearch.UserName));
+            }
+            if (!string.IsNullOrEmpty(userInfoSearch.UserRemark))
+            {
+                temp = temp.Where(t => t.Remark.Contains(userInfoSearch.UserRemark));
+            }
+            userInfoSearch.TotalCount = temp.Count();
+            return temp.OrderBy(t => t.ID).Skip((userInfoSearch.PageIndex - 1) * userInfoSearch.PageSize).Take(userInfoSearch.PageSize);
         }
 
         public override void SetCurrentDal()

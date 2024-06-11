@@ -20,6 +20,7 @@ namespace BZY.OA.DAL
         /// <returns></returns>
         public static DbContext CreateDbContext()
         {
+            //CallContext  线程槽。隔离机制 两个线程间是隔离的
             DbContext dbContext = (DbContext)CallContext.GetData("dbContext");
             if (dbContext == null)
             {

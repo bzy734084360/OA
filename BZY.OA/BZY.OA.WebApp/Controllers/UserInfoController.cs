@@ -2,6 +2,7 @@
 using BZY.OA.IBLL;
 using BZY.OA.Model;
 using BZY.OA.Model.EnumType;
+using BZY.OA.Model.Search;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,13 +25,24 @@ namespace BZY.OA.WebApp.Controllers
         {
             int pageIndex = Request["page"] != null ? int.Parse(Request["page"]) : 1;
             int pageSize = Request["rows"] != null ? int.Parse(Request["rows"]) : 5;
+            //接受搜索条件
+            string userName = Request["name"];
+            string userRemark = Request["remark"];
             int totalCount = 0;
             short delFlag = (short)DeleteEnumType.Normarl;
-            var userInfoList = userInfoService.LoadPageEntities(pageIndex, pageSize, out totalCount, t => t.DelFlag == delFlag, t => t.ID, true);
+            UserInfoSearch userInfoSearch = new UserInfoSearch()
+            {
+                UserName = userName,
+                UserRemark = userRemark,
+                PageIndex = pageIndex,
+                PageSize = pageSize
+            };
+            var userInfoList = userInfoService.LoadSearchEntities(userInfoSearch, delFlag);
+            //var userInfoList = userInfoService.LoadPageEntities(pageIndex, pageSize, out totalCount, t => t.DelFlag == delFlag, t => t.ID, true);
 
             var temp = from u in userInfoList
                        select new { u.ID, u.UName, u.UPwd, u.Remark, u.SubTime };
-            return Json(new { rows = temp, total = totalCount });
+            return Json(new { rows = temp, total = userInfoSearch.TotalCount });
         }
 
         #endregion
