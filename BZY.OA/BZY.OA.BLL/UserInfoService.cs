@@ -14,11 +14,26 @@ namespace BZY.OA.BLL
     /// </summary>
     public class UserInfoService : BaseService<UserInfo>, IUserInfoService
     {
+        /// <summary>
+        /// 批量删除多条用户
+        /// </summary>
+        /// <param name="list"></param>
+        /// <returns></returns>
+        public bool DeleteEntities(List<int> list)
+        {
+            //去数据库中查询出要删除数据的ef对象
+            var userInfoList = this.CurrentDBSession.UserInfoDal.LoadEntities(t => list.Contains(t.ID));
+            foreach (var item in userInfoList)
+            {
+                this.CurrentDBSession.UserInfoDal.DeleteEntity(item);
+            }
+            return this.CurrentDBSession.SaveChanges();
+        }
+
         public override void SetCurrentDal()
         {
             this.CurrentDal = this.CurrentDBSession.UserInfoDal;
         }
-
         //public void SetUserInfo(UserInfo userInfo)
         //{
         //    this.CurrentDBSession.UserInfoDal.AddEntity(userInfo);
