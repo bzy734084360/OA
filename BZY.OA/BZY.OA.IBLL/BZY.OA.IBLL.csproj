@@ -41,7 +41,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IBaseService.cs" />
+    <Compile Include="IUserInfoService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BZY.OA.IDAL\BZY.OA.IDAL.csproj">
+      <Project>{590f7a42-198b-4fad-a1e3-07aebef6c853}</Project>
+      <Name>BZY.OA.IDAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BZY.OA.Model\BZY.OA.Model.csproj">
+      <Project>{26ae1bda-192a-475a-ba64-b4be84739be8}</Project>
+      <Name>BZY.OA.Model</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

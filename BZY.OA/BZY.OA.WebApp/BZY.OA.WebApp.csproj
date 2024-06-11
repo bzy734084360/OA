@@ -121,6 +121,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\UserInfoController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -166,6 +167,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
+    <Folder Include="Views\UserInfo\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -179,6 +181,20 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.4.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BZY.OA.BLL\BZY.OA.BLL.csproj">
+      <Project>{ebf76f98-d222-4b55-ba70-ea6819da2c53}</Project>
+      <Name>BZY.OA.BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BZY.OA.IBLL\BZY.OA.IBLL.csproj">
+      <Project>{dc36b55c-a0ab-486e-b743-2b3b80c60df1}</Project>
+      <Name>BZY.OA.IBLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BZY.OA.Model\BZY.OA.Model.csproj">
+      <Project>{26ae1bda-192a-475a-ba64-b4be84739be8}</Project>
+      <Name>BZY.OA.Model</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

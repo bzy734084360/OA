@@ -1,6 +1,7 @@
 ﻿using BZY.OA.Model;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
@@ -8,10 +9,13 @@ using System.Threading.Tasks;
 
 namespace BZY.OA.DAL
 {
+    /// <summary>
+    /// Dal层基类
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
     public class BaseDal<T> where T : class, new()
     {
-        OAEntities Db = new OAEntities();
-
+        DbContext Db = DBContextFactory.CreateDbContext();
         /// <summary>
         /// 新增
         /// </summary>
@@ -20,7 +24,7 @@ namespace BZY.OA.DAL
         public T AddEntity(T entity)
         {
             Db.Set<T>().Add(entity);
-            Db.SaveChanges();
+            //Db.SaveChanges();
             return entity;
         }
         /// <summary>
@@ -31,7 +35,8 @@ namespace BZY.OA.DAL
         public bool DeleteEntity(T entity)
         {
             Db.Entry(entity).State = System.Data.Entity.EntityState.Deleted;
-            return Db.SaveChanges() > 0;
+            //return Db.SaveChanges() > 0;
+            return true;
         }
         /// <summary>
         /// 更新
@@ -41,7 +46,8 @@ namespace BZY.OA.DAL
         public bool EditEntity(T entity)
         {
             Db.Entry(entity).State = System.Data.Entity.EntityState.Modified;
-            return Db.SaveChanges() > 0;
+            //return Db.SaveChanges() > 0;
+            return true;
         }
         /// <summary>
         /// 获取列表

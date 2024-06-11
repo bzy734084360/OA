@@ -3,6 +3,7 @@ using BZY.OA.IDAL;
 using BZY.OA.Model;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,9 +15,15 @@ namespace BZY.OA.DALFactory
     /// 所以数据会话层将业务层与数据层解耦
     /// 在数据会话层中提供一个方法；完成所有数据的保存。
     /// </summary>
-    public class DbSession
+    public class DbSession : IDBSession
     {
-        OAEntities Db = new OAEntities();
+        public DbContext Db
+        {
+            get
+            {
+                return DBContextFactory.CreateDbContext();
+            }
+        }
         private IUserInfoDal _UserInfoDal;
         public IUserInfoDal UserInfoDal
         {
@@ -24,7 +31,9 @@ namespace BZY.OA.DALFactory
             {
                 if (_UserInfoDal == null)
                 {
-                    _UserInfoDal = new UserInfoDal();
+                    //_UserInfoDal = new UserInfoDal();
+                    //通过抽象工厂封装了类的实例的创建
+                    _UserInfoDal = AbstractFactory.CreateUserInfoDal();
                 }
                 return _UserInfoDal;
             }

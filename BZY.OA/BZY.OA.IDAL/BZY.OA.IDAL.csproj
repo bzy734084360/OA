@@ -31,6 +31,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -42,6 +48,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IBaseDal.cs" />
+    <Compile Include="IDBSession.cs" />
     <Compile Include="IUserInfoDal.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
