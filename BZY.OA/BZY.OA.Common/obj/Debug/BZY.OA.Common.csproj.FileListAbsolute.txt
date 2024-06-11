@@ -1,6 +1,0 @@
-F:\于富\git管理代码\OA\BZY.OA\BZY.OA.Common\bin\Debug\BZY.OA.Common.dll
-F:\于富\git管理代码\OA\BZY.OA\BZY.OA.Common\bin\Debug\BZY.OA.Common.pdb
-F:\于富\git管理代码\OA\BZY.OA\BZY.OA.Common\obj\Debug\BZY.OA.Common.csproj.AssemblyReference.cache
-F:\于富\git管理代码\OA\BZY.OA\BZY.OA.Common\obj\Debug\BZY.OA.Common.csproj.CoreCompileInputs.cache
-F:\于富\git管理代码\OA\BZY.OA\BZY.OA.Common\obj\Debug\BZY.OA.Common.dll
-F:\于富\git管理代码\OA\BZY.OA\BZY.OA.Common\obj\Debug\BZY.OA.Common.pdb

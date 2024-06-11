@@ -19,12 +19,12 @@ namespace BZY.OA.BLL
             this.CurrentDal = this.CurrentDBSession.UserInfoDal;
         }
 
-        public void SetUserInfo(UserInfo userInfo)
-        {
-            this.CurrentDBSession.UserInfoDal.AddEntity(userInfo);
-            this.CurrentDBSession.UserInfoDal.DeleteEntity(userInfo);
-            this.CurrentDBSession.UserInfoDal.EditEntity(userInfo);
-            this.CurrentDBSession.SaveChanges();
-        }
+        //public void SetUserInfo(UserInfo userInfo)
+        //{
+        //    this.CurrentDBSession.UserInfoDal.AddEntity(userInfo);
+        //    this.CurrentDBSession.UserInfoDal.DeleteEntity(userInfo);
+        //    this.CurrentDBSession.UserInfoDal.EditEntity(userInfo);
+        //    this.CurrentDBSession.SaveChanges();
+        //}
     }
 }
