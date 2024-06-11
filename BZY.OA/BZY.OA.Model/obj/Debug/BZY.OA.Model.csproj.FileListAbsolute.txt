@@ -1,0 +1,13 @@
+F:\于富\git管理代码\BZY.OA\BZY.OA\BZY.OA.Model\bin\Debug\BZY.OA.Model.dll.config
+F:\于富\git管理代码\BZY.OA\BZY.OA\BZY.OA.Model\bin\Debug\BZY.OA.Model.dll
+F:\于富\git管理代码\BZY.OA\BZY.OA\BZY.OA.Model\bin\Debug\BZY.OA.Model.pdb
+F:\于富\git管理代码\BZY.OA\BZY.OA\BZY.OA.Model\bin\Debug\EntityFramework.dll
+F:\于富\git管理代码\BZY.OA\BZY.OA\BZY.OA.Model\bin\Debug\EntityFramework.SqlServer.dll
+F:\于富\git管理代码\BZY.OA\BZY.OA\BZY.OA.Model\bin\Debug\EntityFramework.xml
+F:\于富\git管理代码\BZY.OA\BZY.OA\BZY.OA.Model\bin\Debug\EntityFramework.SqlServer.xml
+F:\于富\git管理代码\BZY.OA\BZY.OA\BZY.OA.Model\bin\Debug\zh-Hans\EntityFramework.resources.dll
+F:\于富\git管理代码\BZY.OA\BZY.OA\BZY.OA.Model\obj\Debug\BZY.OA.Model.csproj.AssemblyReference.cache
+F:\于富\git管理代码\BZY.OA\BZY.OA\BZY.OA.Model\obj\Debug\BZY.OA.Model.csproj.CoreCompileInputs.cache
+F:\于富\git管理代码\BZY.OA\BZY.OA\BZY.OA.Model\obj\Debug\BZY.OA.Model.csproj.CopyComplete
+F:\于富\git管理代码\BZY.OA\BZY.OA\BZY.OA.Model\obj\Debug\BZY.OA.Model.dll
+F:\于富\git管理代码\BZY.OA\BZY.OA\BZY.OA.Model\obj\Debug\BZY.OA.Model.pdb
