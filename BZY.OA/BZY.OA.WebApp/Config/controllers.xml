@@ -2,7 +2,10 @@
 <objects xmlns="http://www.springframework.net">
 
 	<object name="UserInfoController" type="BZY.OA.WebApp.Controllers.UserInfoController,BZY.OA.WebApp" singleton="false" >
-		<property name="userInfoService" ref="UserInfoService" />
+		<property name="UserInfoService" ref="UserInfoService" />
+	</object>
+	<object name="LoginController" type="BZY.OA.WebApp.Controllers.LoginController,BZY.OA.WebApp" singleton="false" >
+		<property name="UserInfoService" ref="UserInfoService" />
 	</object>
 	<!--intentionally do NOT register the AccountController or the ValuesController with the container; demonstrates that the underlying
   default controller factory will properly (attempt to!) resolve all controllers not registered with Spring.NET

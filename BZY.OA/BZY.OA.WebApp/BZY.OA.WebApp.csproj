@@ -59,7 +59,8 @@
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="log4net, Version=2.0.17.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
-      <HintPath>..\packages\log4net.2.0.17\lib\net45\log4net.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\log4net.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Bcl.HashCode, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Bcl.HashCode.1.1.1\lib\net461\Microsoft.Bcl.HashCode.dll</HintPath>
@@ -183,12 +184,15 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\TestController.cs" />
     <Compile Include="Controllers\UserInfoController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\MyActionFilter.cs" />
     <Compile Include="Models\MyExceptionAttribute.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -462,6 +466,22 @@
     <Content Include="Content\easyui\metro\tree.css" />
     <Content Include="Content\easyui\metro\validatebox.css" />
     <Content Include="Content\easyui\metro\window.css" />
+    <Content Include="Content\Images\3DSMAX.png" />
+    <Content Include="Content\Images\7_7.jpg" />
+    <Content Include="Content\Images\Alien Folder.png" />
+    <Content Include="Content\Images\applebg.jpg" />
+    <Content Include="Content\Images\bg.png" />
+    <Content Include="Content\Images\bg3.png" />
+    <Content Include="Content\Images\big.png" />
+    <Content Include="Content\Images\blue_glow.jpg" />
+    <Content Include="Content\Images\login\HeadBack.jpg" />
+    <Content Include="Content\Images\login\login-btn.gif" />
+    <Content Include="Content\Images\login\panel-c.gif" />
+    <Content Include="Content\Images\login\panel-f.gif" />
+    <Content Include="Content\Images\login\panel-h.gif" />
+    <Content Include="Content\Images\logo.gif" />
+    <Content Include="Content\Images\Program Files Folder.png" />
+    <Content Include="Content\Images\Xp-G5 006.png" />
     <Content Include="Error.html" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -499,10 +519,12 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Test\Index.cshtml" />
     <Content Include="Views\Test\ShowResult.cshtml" />
+    <Content Include="Views\Login\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Log\" />
+    <Folder Include="Views\Base\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -517,6 +539,10 @@
     <ProjectReference Include="..\BZY.OA.BLL\BZY.OA.BLL.csproj">
       <Project>{ebf76f98-d222-4b55-ba70-ea6819da2c53}</Project>
       <Name>BZY.OA.BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BZY.OA.Common\BZY.OA.Common.csproj">
+      <Project>{7ca10b74-a340-4029-b8bd-7584cde093c3}</Project>
+      <Name>BZY.OA.Common</Name>
     </ProjectReference>
     <ProjectReference Include="..\BZY.OA.IBLL\BZY.OA.IBLL.csproj">
       <Project>{dc36b55c-a0ab-486e-b743-2b3b80c60df1}</Project>

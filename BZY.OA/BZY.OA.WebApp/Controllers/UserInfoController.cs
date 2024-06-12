@@ -11,9 +11,9 @@ using System.Web.Mvc;
 
 namespace BZY.OA.WebApp.Controllers
 {
-    public class UserInfoController : Controller
+    public class UserInfoController : BaseController
     {
-        IUserInfoService userInfoService { get; set; }
+        IUserInfoService UserInfoService { get; set; }
         public ActionResult Index()
         {
             return View();
@@ -37,7 +37,7 @@ namespace BZY.OA.WebApp.Controllers
                 PageIndex = pageIndex,
                 PageSize = pageSize
             };
-            var userInfoList = userInfoService.LoadSearchEntities(userInfoSearch, delFlag);
+            var userInfoList = UserInfoService.LoadSearchEntities(userInfoSearch, delFlag);
             //var userInfoList = userInfoService.LoadPageEntities(pageIndex, pageSize, out totalCount, t => t.DelFlag == delFlag, t => t.ID, true);
 
             var temp = from u in userInfoList
@@ -59,7 +59,7 @@ namespace BZY.OA.WebApp.Controllers
                 list.Add(Convert.ToInt32(item));
             }
             //将List集合存储的要删除的记录数据传递到业务层
-            bool isDelete = userInfoService.DeleteEntities(list);
+            bool isDelete = UserInfoService.DeleteEntities(list);
             return Content(isDelete ? "ok" : "no");
         }
 
@@ -72,7 +72,7 @@ namespace BZY.OA.WebApp.Controllers
             userInfo.DelFlag = 0;
             userInfo.ModifiedOn = DateTime.Now;
             userInfo.SubTime = DateTime.Now;
-            userInfoService.AddEntity(userInfo);
+            UserInfoService.AddEntity(userInfo);
             return Content("ok");
         }
 
@@ -87,7 +87,7 @@ namespace BZY.OA.WebApp.Controllers
         public ActionResult ShowEditUserInfo()
         {
             int id = int.Parse(Request["id"]);
-            var userInfo = userInfoService.LoadEntities(t => t.ID == id).FirstOrDefault();
+            var userInfo = UserInfoService.LoadEntities(t => t.ID == id).FirstOrDefault();
             return Json(userInfo, JsonRequestBehavior.AllowGet);
         }
         /// <summary>
@@ -97,7 +97,7 @@ namespace BZY.OA.WebApp.Controllers
         public ActionResult EditUserInfo(UserInfo userInfo)
         {
             userInfo.ModifiedOn = DateTime.Now;
-            var isEidt = userInfoService.EditEntity(userInfo);
+            var isEidt = UserInfoService.EditEntity(userInfo);
             return Content(isEidt ? "ok" : "no");
         }
 

@@ -23,6 +23,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Demo", "Demo", "{934CD80C-2
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BZY.OA.SpringNet", "BZY.OA.SpringNet\BZY.OA.SpringNet.csproj", "{84E13D6C-60CF-48A6-A554-0C7764D44C54}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BZY.OA.MemcacheDemo", "BZY.OA.MemcacheDemo\BZY.OA.MemcacheDemo.csproj", "{CEA98723-159D-4B18-8594-25627D060313}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -65,12 +67,17 @@ Global
 		{84E13D6C-60CF-48A6-A554-0C7764D44C54}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{84E13D6C-60CF-48A6-A554-0C7764D44C54}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{84E13D6C-60CF-48A6-A554-0C7764D44C54}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CEA98723-159D-4B18-8594-25627D060313}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CEA98723-159D-4B18-8594-25627D060313}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CEA98723-159D-4B18-8594-25627D060313}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CEA98723-159D-4B18-8594-25627D060313}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{84E13D6C-60CF-48A6-A554-0C7764D44C54} = {934CD80C-2D14-4EB1-9905-AB03FEBA04C7}
+		{CEA98723-159D-4B18-8594-25627D060313} = {934CD80C-2D14-4EB1-9905-AB03FEBA04C7}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E0E352D3-1B9A-43DF-9B9C-480A60A55E58}

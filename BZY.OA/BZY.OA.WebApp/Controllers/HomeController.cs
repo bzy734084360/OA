@@ -6,11 +6,12 @@ using System.Web.Mvc;
 
 namespace BZY.OA.WebApp.Controllers
 {
-    public class HomeController : Controller
+    public class HomeController : BaseController
     {
         // GET: Home
         public ActionResult Index()
         {
+            ViewData["name"] = LoginUser.UName;
             return View();
         }
     }
