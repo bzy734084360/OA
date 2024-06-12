@@ -13,7 +13,7 @@ namespace BZY.OA.WebApp.Controllers
 {
     public class UserInfoController : Controller
     {
-        IUserInfoService userInfoService = new UserInfoService();
+        IUserInfoService userInfoService { get; set; }
         public ActionResult Index()
         {
             return View();
@@ -28,7 +28,7 @@ namespace BZY.OA.WebApp.Controllers
             //接受搜索条件
             string userName = Request["name"];
             string userRemark = Request["remark"];
-            int totalCount = 0;
+            //int totalCount = 0;
             short delFlag = (short)DeleteEnumType.Normarl;
             UserInfoSearch userInfoSearch = new UserInfoSearch()
             {

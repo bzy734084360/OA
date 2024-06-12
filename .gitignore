@@ -1,0 +1,19 @@
+﻿################################################################################
+# 此 .gitignore 文件已由 Microsoft(R) Visual Studio 自动创建。
+################################################################################
+
+/BZY.OA/BZY.OA.Common/bin/Debug
+/BZY.OA/BZY.OA.BLL/bin/Debug
+/BZY.OA/BZY.OA.Common/obj/Debug
+/BZY.OA/BZY.OA.DALFactory/obj/Debug
+/BZY.OA/BZY.OA.DALFactory/bin/Debug
+/BZY.OA/BZY.OA.IBLL/obj/Debug
+/BZY.OA/BZY.OA.IBLL/bin/Debug
+/BZY.OA/BZY.OA.IDAL/obj/Debug
+/BZY.OA/BZY.OA.IDAL/bin/Debug
+/BZY.OA/BZY.OA.Model/obj/Debug
+/BZY.OA/BZY.OA.Model/bin/Debug
+/BZY.OA/BZY.OA.SpringNet/obj/Debug
+/BZY.OA/BZY.OA.SpringNet/bin/Debug
+/BZY.OA/BZY.OA.WebApp/obj/Debug
+/BZY.OA/BZY.OA.WebApp/bin
