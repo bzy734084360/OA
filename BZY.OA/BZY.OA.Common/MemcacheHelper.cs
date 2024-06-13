@@ -13,7 +13,7 @@ namespace BZY.OA.Common
         {
             //memcache服务端与客户端版本一致问题，先按照视频中学习
             //可能这个地方需要通过配置文件获取 新版本无法兼容已有的memcached服务端
-            string[] serverlist = { "127.0.0.1:11211", "10.0.0.132:11211" };
+            string[] serverlist = { "127.0.0.1:11211" };
             //初始化池
             SockIOPool pool = SockIOPool.GetInstance();
             pool.SetServers(serverlist);

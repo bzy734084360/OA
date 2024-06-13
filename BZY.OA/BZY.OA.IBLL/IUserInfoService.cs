@@ -12,5 +12,7 @@ namespace BZY.OA.IBLL
     {
         bool DeleteEntities(List<int> list);
         IQueryable<UserInfo> LoadSearchEntities(UserInfoSearch userInfoSearch, short delFlag);
+        bool SetUserRoleInfo(int userId, List<int> roleIdList);
+        bool SetUserActionInfo(int actionId, int userId, bool isPass);
     }
 }

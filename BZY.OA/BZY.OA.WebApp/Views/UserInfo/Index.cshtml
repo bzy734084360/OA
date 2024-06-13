@@ -7,7 +7,7 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>Index</title>
+    <title>用户管理</title>
     <link href="~/Content/easyui/default/easyui.css" rel="stylesheet" />
     <link href="~/Content/easyui/icon.css" rel="stylesheet" />
     <script src="~/Scripts/jquery-3.4.1.min.js"></script>
@@ -20,6 +20,8 @@
         $(function () {
             $("#addDiv").css("display", "none");
             $("#editDiv").css("display", "none");
+            $("#setUsrRoleDiv").css("display", "none");
+            $("#setUsrActionDiv").css("display", "none");
             //给搜索按钮加一个单击事件
             $("#btnSearch").click(function () {
                 //获取用户输入的搜索数据.
@@ -83,9 +85,99 @@
                     handler: function () {
                         showEditInfo();
                     }
+                }, {
+                    id: 'btnSetUserRole',
+                    text: '为用户分配角色',
+                    iconCls: 'icon-edit',
+                    handler: function () {
+
+                        showSetUserRoleInfo();
+                    }
+                }, {
+                    id: 'btnSetUserAction',
+                    text: '为用户分配权限',
+                    iconCls: 'icon-edit',
+                    handler: function () {
+
+                        showSetUserActionInfo();
+                    }
                 }],
             });
         }
+        //为用户分配权限
+        function showSetUserActionInfo() {
+            //判断一下用户是否选择了要修改的数据
+            var rows = $('#tt').datagrid('getSelections');//获取所选择的行
+            if (rows.length != 1) {
+                $.messager.alert("提示", "请选择要分配权限的用户", "error");
+                return;
+            }
+            $("#setUserActionFrame").attr("src", "/UserInfo/ShowUserAction/?userId=" + rows[0].ID);
+            $("#setUsrActionDiv").css("display", "block");
+            $('#setUsrActionDiv').dialog({
+                title: '为用户分配权限数据',
+                width: 600,
+                height: 350,
+                collapsible: true,
+                maximizable: true,
+                resizable: true,
+                modal: true,
+                buttons: [{
+                    text: 'Ok',
+                    iconCls: 'icon-ok',
+                    handler: function () {
+                        $('#setUsrActionDiv').dialog('close');
+                    }
+                }, {
+                    text: 'Cancel',
+                    handler: function () {
+                        $('#setUsrActionDiv').dialog('close');
+                    }
+                }]
+            });
+        }
+
+        //为用户配置角色.
+        function showSetUserRoleInfo() {
+            //判断一下用户是否选择了要修改的数据
+            var rows = $('#tt').datagrid('getSelections');//获取所选择的行
+            if (rows.length != 1) {
+                $.messager.alert("提示", "请选择要分配角色的用户", "error");
+                return;
+            }
+            $("#setUserRoleFrame").attr("src", "/UserInfo/ShowUserRoleInfo/?id=" + rows[0].ID);
+            $("#setUsrRoleDiv").css("display", "block");
+            $('#setUsrRoleDiv').dialog({
+                title: '为用户分配角色数据',
+                width: 300,
+                height: 200,
+                collapsible: true,
+                maximizable: true,
+                resizable: true,
+                modal: true,
+                buttons: [{
+                    text: 'Ok',
+                    iconCls: 'icon-ok',
+                    handler: function () {
+                        var childWindow = $("#setUserRoleFrame")[0].contentWindow;
+                        childWindow.subForm();
+                    }
+                }, {
+                    text: 'Cancel',
+                    handler: function () {
+                        $('#setUsrRoleDiv').dialog('close');
+                    }
+                }]
+            });
+        }
+        //为用户分配完成角色以后调用的方法。
+        function afterSetUserRole(data) {
+            if (data == "ok") {
+                $('#setUsrRoleDiv').dialog('close');
+            }
+
+        }
+
         //删除数据
         function deleteInfo() {
             var rows = $('#tt').datagrid('getSelections');//获取所选择的行
@@ -118,7 +210,6 @@
             });
 
         }
-
         //添加数据
         function addInfo() {
             $("#addDiv").css("display", "block");
@@ -199,13 +290,14 @@
             $.ajax({
                 url: "/UserInfo/ShowEditUserInfo",
                 type: "POST",
+                dataType: "json",
                 data: { "id": id },
                 success: function (data) {
                     $("#txtUName").val(data.UName);
                     $("#txtUPwd").val(data.UPwd);
                     $("#txtRemark").val(data.Remark);
                     $("#txtSort").val(data.Sort);
-                    $("#txtSubTime").val(ChangeDateFormat(data.SubTime));
+                    $("#txtSubTime").val(data.SubTime);
                     $("#txtDelFlag").val(data.DelFlag);
                     $("#txtId").val(data.ID);
                 }
@@ -256,7 +348,6 @@
         }
     </script>
 
-
 </head>
 <body>
     <div>
@@ -292,6 +383,14 @@
                 <tr><td>排序</td><td><input type="text" name="Sort" id="txtSort" /></td></tr>
             </table>
         }
+    </div>
+    <!-------------------为用户分配角色---------------------->
+    <div id="setUsrRoleDiv">
+        <iframe id="setUserRoleFrame" width="100%" height="100%" frameborder="0"></iframe>
+    </div>
+    <!--------------为用户分配权限------------------->
+    <div id="setUsrActionDiv">
+        <iframe id="setUserActionFrame" width="100%" height="100%" frameborder="0"></iframe>
     </div>
 </body>
 </html>

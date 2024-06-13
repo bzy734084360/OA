@@ -2,4 +2,10 @@
 <objects xmlns="http://www.springframework.net">
 	<object name="UserInfoService"  type="BZY.OA.BLL.UserInfoService, BZY.OA.BLL" singleton="false" >
 	</object>
+	<object name="RoleInfoService"  type="BZY.OA.BLL.RoleInfoService, BZY.OA.BLL" singleton="false" >
+	</object>
+	<object name="ActionInfoService"  type="BZY.OA.BLL.ActionInfoService, BZY.OA.BLL" singleton="false" >
+	</object>
+	<object name="R_UserInfo_ActionInfoService"  type="BZY.OA.BLL.R_UserInfo_ActionInfoService, BZY.OA.BLL" singleton="false" >
+	</object>
 </objects>

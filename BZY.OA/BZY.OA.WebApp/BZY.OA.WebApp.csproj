@@ -184,9 +184,11 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\ActionInfoController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\RoleInfoController.cs" />
     <Compile Include="Controllers\TestController.cs" />
     <Compile Include="Controllers\UserInfoController.cs" />
     <Compile Include="Global.asax.cs">
@@ -466,6 +468,7 @@
     <Content Include="Content\easyui\metro\tree.css" />
     <Content Include="Content\easyui\metro\validatebox.css" />
     <Content Include="Content\easyui\metro\window.css" />
+    <Content Include="Content\easyui\tableStyle.css" />
     <Content Include="Content\Images\3DSMAX.png" />
     <Content Include="Content\Images\7_7.jpg" />
     <Content Include="Content\Images\Alien Folder.png" />
@@ -796,6 +799,7 @@
     <Content Include="Scripts\datapattern.js" />
     <Content Include="Scripts\easyui\easyui-lang-zh_CN.js" />
     <Content Include="Scripts\easyui\jquery.easyui.min.js" />
+    <Content Include="Scripts\jquery-1.7.1.min.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
     <Content Include="Scripts\jquery-3.4.1.slim.js" />
@@ -808,6 +812,7 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\MyAjaxForm.js" />
     <Content Include="TextTemplate1.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>TextTemplate1.txt</LastGenOutput>
@@ -834,11 +839,16 @@
     <Content Include="Views\Test\ShowResult.cshtml" />
     <Content Include="Views\Login\Index.cshtml" />
     <Content Include="Views\Home\HomePage.cshtml" />
+    <Content Include="Views\RoleInfo\Index.cshtml" />
+    <Content Include="Views\RoleInfo\ShowRoleAddInfo.cshtml" />
+    <Content Include="Views\ActionInfo\Index.cshtml" />
+    <Content Include="Views\RoleInfo\ShowRoleAction.cshtml" />
+    <Content Include="Views\UserInfo\ShowUserRoleInfo.cshtml" />
+    <Content Include="Views\UserInfo\ShowUserAction.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Log\" />
-    <Folder Include="Views\Base\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

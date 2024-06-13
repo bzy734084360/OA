@@ -30,7 +30,12 @@ namespace BZY.OA.BLL
             }
             return this.CurrentDBSession.SaveChanges();
         }
-
+        /// <summary>
+        /// 查询用户信息-包含分页
+        /// </summary>
+        /// <param name="userInfoSearch"></param>
+        /// <param name="delFlag"></param>
+        /// <returns></returns>
         public IQueryable<UserInfo> LoadSearchEntities(UserInfoSearch userInfoSearch, short delFlag)
         {
             var temp = this.CurrentDBSession.UserInfoDal.LoadEntities(t => t.DelFlag == delFlag);
@@ -45,6 +50,54 @@ namespace BZY.OA.BLL
             userInfoSearch.TotalCount = temp.Count();
             return temp.OrderBy(t => t.ID).Skip((userInfoSearch.PageIndex - 1) * userInfoSearch.PageSize).Take(userInfoSearch.PageSize);
         }
+        /// <summary>
+        /// 为角色分配权限
+        /// </summary>
+        /// <param name="roleId">角色编号</param>
+        /// <param name="actionIdList">权限编号列表</param>
+        /// <returns></returns>
+        public bool SetUserRoleInfo(int roleId, List<int> actionIdList)
+        {
+            //获取用户信息.
+            var userInfo = this.CurrentDBSession.UserInfoDal.LoadEntities(r => r.ID == roleId).FirstOrDefault();
+            if (userInfo != null)
+            {
+                userInfo.RoleInfo.Clear();
+                foreach (int actionId in actionIdList)
+                {
+                    var roleInfo = this.CurrentDBSession.RoleInfoDal.LoadEntities(a => a.ID == actionId).FirstOrDefault();
+                    userInfo.RoleInfo.Add(roleInfo);
+                }
+                return this.CurrentDBSession.SaveChanges();
+            }
+            return false;
+        }
+        /// <summary>
+        /// 完成用户权限的分配
+        /// </summary>
+        /// <param name="actionId"></param>
+        /// <param name="userId"></param>
+        /// <param name="isPass"></param>
+        /// <returns></returns>
+        public bool SetUserActionInfo(int actionId, int userId, bool isPass)
+        {
+            //判断userId以前是否有了该actionId,如果有了只需要修改isPass状态，否则插入。
+            var r_userInfo_actionInfo = this.CurrentDBSession.R_UserInfo_ActionInfoDal.LoadEntities(a => a.ActionInfoID == actionId && a.UserInfoID == userId).FirstOrDefault();
+            if (r_userInfo_actionInfo == null)
+            {
+                R_UserInfo_ActionInfo userInfoActionInfo = new R_UserInfo_ActionInfo();
+                userInfoActionInfo.ActionInfoID = actionId;
+                userInfoActionInfo.UserInfoID = userId;
+                userInfoActionInfo.IsPass = isPass;
+                this.CurrentDBSession.R_UserInfo_ActionInfoDal.AddEntity(userInfoActionInfo);
+            }
+            else
+            {
+                r_userInfo_actionInfo.IsPass = isPass;
+                this.CurrentDBSession.R_UserInfo_ActionInfoDal.EditEntity(r_userInfo_actionInfo);
+            }
+            return this.CurrentDBSession.SaveChanges();
 
+        }
     }
 }

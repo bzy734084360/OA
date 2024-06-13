@@ -3,10 +3,24 @@
 
 	<object name="UserInfoController" type="BZY.OA.WebApp.Controllers.UserInfoController,BZY.OA.WebApp" singleton="false" >
 		<property name="UserInfoService" ref="UserInfoService" />
+		<property name="RoleInfoService" ref="RoleInfoService" />
+		<property name="ActionInfoService" ref="ActionInfoService" />
+		<property name="R_UserInfo_ActionInfoService" ref="R_UserInfo_ActionInfoService" />
 	</object>
 	<object name="LoginController" type="BZY.OA.WebApp.Controllers.LoginController,BZY.OA.WebApp" singleton="false" >
 		<property name="UserInfoService" ref="UserInfoService" />
 	</object>
+	<object name="HomeController" type="BZY.OA.WebApp.Controllers.HomeController,BZY.OA.WebApp" singleton="false" >
+		<property name="UserInfoService" ref="UserInfoService" />
+	</object>
+	<object name="RoleInfoController" type="BZY.OA.WebApp.Controllers.RoleInfoController,BZY.OA.WebApp" singleton="false" >
+		<property name="RoleInfoService" ref="RoleInfoService" />
+		<property name="ActionInfoService" ref="ActionInfoService" />
+	</object>
+	<object name="ActionInfoController" type="BZY.OA.WebApp.Controllers.ActionInfoController,BZY.OA.WebApp" singleton="false" >
+		<property name="ActionInfoService" ref="ActionInfoService" />
+	</object>
+	
 	<!--intentionally do NOT register the AccountController or the ValuesController with the container; demonstrates that the underlying
   default controller factory will properly (attempt to!) resolve all controllers not registered with Spring.NET
   using its default controller resolution behavoir-->
