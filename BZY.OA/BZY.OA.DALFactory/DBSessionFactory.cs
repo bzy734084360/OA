@@ -15,7 +15,7 @@ namespace BZY.OA.DALFactory
             IDBSession dBSession = (IDBSession)CallContext.GetData("dbSession");
             if (dBSession == null)
             {
-                dBSession = new DbSession();
+                dBSession = new DBSession();
                 CallContext.SetData("dbSession", dBSession);
             }
             return dBSession;

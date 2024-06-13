@@ -14,5 +14,10 @@ namespace BZY.OA.WebApp.Controllers
             ViewData["name"] = LoginUser.UName;
             return View();
         }
+        public ActionResult HomePage()
+        {
+            return View();
+        }
+
     }
 }

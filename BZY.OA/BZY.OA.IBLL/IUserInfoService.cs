@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace BZY.OA.IBLL
 {
-    public interface IUserInfoService : IBaseService<UserInfo>
+    public partial interface IUserInfoService : IBaseService<UserInfo>
     {
         bool DeleteEntities(List<int> list);
         IQueryable<UserInfo> LoadSearchEntities(UserInfoSearch userInfoSearch, short delFlag);

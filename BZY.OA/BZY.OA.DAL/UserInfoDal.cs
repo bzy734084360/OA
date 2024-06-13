@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace BZY.OA.DAL
 {
-    public class UserInfoDal : BaseDal<UserInfo>, IUserInfoDal
+    public partial class UserInfoDal : BaseDal<UserInfo>, IUserInfoDal
     {
     }
 }

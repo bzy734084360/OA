@@ -5,7 +5,17 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="cd8baa49d4d046cda5292f960af16716" Name="Diagram1">
-        <EntityTypeShape EntityType="OAModel.UserInfo" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="OAModel.UserInfo" Width="1.5" PointX="0.5" PointY="3" />
+        <EntityTypeShape EntityType="OAModel.ActionInfo" Width="1.5" PointX="3.5" PointY="8.5" />
+        <EntityTypeShape EntityType="OAModel.Department" Width="1.5" PointX="7.375" PointY="8" />
+        <EntityTypeShape EntityType="OAModel.R_UserInfo_ActionInfo" Width="1.5" PointX="0.5" PointY="8.375" />
+        <EntityTypeShape EntityType="OAModel.RoleInfo" Width="1.5" PointX="3.5" PointY="4.25" />
+        <AssociationConnector Association="OAModel.FK_UserInfoR_UserInfo_ActionInfo" />
+        <AssociationConnector Association="OAModel.UserInfoDepartment" />
+        <AssociationConnector Association="OAModel.UserInfoRoleInfo" />
+        <AssociationConnector Association="OAModel.FK_ActionInfoR_UserInfo_ActionInfo" />
+        <AssociationConnector Association="OAModel.DepartmentActionInfo" />
+        <AssociationConnector Association="OAModel.RoleInfoActionInfo" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
