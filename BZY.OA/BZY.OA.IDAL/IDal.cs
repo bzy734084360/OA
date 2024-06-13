@@ -25,12 +25,22 @@ namespace BZY.OA.IDAL
       
     }
 	
+	public partial interface IKeyWordsRankDal :IBaseDal<KeyWordsRank>
+    {
+      
+    }
+	
 	public partial interface IR_UserInfo_ActionInfoDal :IBaseDal<R_UserInfo_ActionInfo>
     {
       
     }
 	
 	public partial interface IRoleInfoDal :IBaseDal<RoleInfo>
+    {
+      
+    }
+	
+	public partial interface ISearchDetailsDal :IBaseDal<SearchDetails>
     {
       
     }

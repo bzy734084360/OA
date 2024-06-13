@@ -9,8 +9,18 @@ using System.Threading;
 
 namespace BZY.OA.WebApp.Models
 {
-    public class IndexManager
+    public sealed class IndexManager
     {
+        private static readonly IndexManager indexManager = new IndexManager();
+        private IndexManager()
+        {
+
+        }
+        public static IndexManager GetInstance()
+        {
+            return indexManager;
+        }
+
         public Queue<ViewModelContent> queue = new Queue<ViewModelContent>();
         /// <summary>
         /// 向队列中添加数据

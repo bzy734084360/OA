@@ -8,6 +8,9 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>搜索</title>
+    <script src="~/Scripts/jquery-1.7.1.min.js"></script>
+    <script src="~/Scripts/jquery-ui-1.8.20.min.js"></script>
+    <link href="~/Content/easyui/base/jquery-ui.css" rel="stylesheet" />
     <style type="text/css">
         .search-text2 {
             display: block;
@@ -65,14 +68,26 @@
                         font-style: normal;
                         color: #cc0000;
                     }
+
+        .ui-autocomplete-loading {
+            background: white url('/Content/images/ui-anim_basic_16x16.gif') right center no-repeat;
+        }
     </style>
+    <script>
+        $(function () {
+            $("#txtSearchContent").autocomplete({
+                source: "/Search/AutoComplete"
+
+            });
+        });
+    </script>
 </head>
 <body>
     <div>
         <form method="get" action="/Search/SearchContent">
-            <input type="text" name="txtSearch" class="search-text2" />
+            <input type="text" name="txtSearch" class="search-text2" id="txtSearchContent" />
             <input type="submit" value="搜一搜" name="btnSearch" class="search-btn2" />
-            <input type="submit" value="创建索引库" name="btnCreate" />
+            @*<input type="submit" value="创建索引库" name="btnCreate" />*@
         </form>
         <br />
         <div class="search-list-con">

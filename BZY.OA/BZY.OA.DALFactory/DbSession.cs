@@ -4,6 +4,7 @@ using BZY.OA.Model;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -32,6 +33,27 @@ namespace BZY.OA.DALFactory
         public bool SaveChanges()
         {
             return Db.SaveChanges() > 0;
+        }
+        /// <summary>
+        /// 执行SQL
+        /// </summary>
+        /// <param name="sql"></param>
+        /// <param name="pars"></param>
+        /// <returns></returns>
+        public int ExecuteSql(string sql, params SqlParameter[] pars)
+        {
+            return Db.Database.ExecuteSqlCommand(sql, pars);
+        }
+        /// <summary>
+        /// 查询SQL结果
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="sql"></param>
+        /// <param name="pars"></param>
+        /// <returns></returns>
+        public List<T> ExecuteQuery<T>(string sql, params SqlParameter[] pars)
+        {
+            return Db.Database.SqlQuery<T>(sql, pars).ToList();
         }
     }
 }

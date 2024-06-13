@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 06/12/2024 21:00:11
+-- Date Created: 06/13/2024 19:42:58
 -- Generated from EDMX file: F:\于富\git管理代码\OA\BZY.OA\BZY.OA.Model\Model1.edmx
 -- --------------------------------------------------
 
@@ -17,13 +17,70 @@ GO
 -- Dropping existing FOREIGN KEY constraints
 -- --------------------------------------------------
 
+IF OBJECT_ID(N'[dbo].[FK_ActionInfoR_UserInfo_ActionInfo]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[R_UserInfo_ActionInfo] DROP CONSTRAINT [FK_ActionInfoR_UserInfo_ActionInfo];
+GO
+IF OBJECT_ID(N'[dbo].[FK_DepartmentActionInfo_ActionInfo]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[DepartmentActionInfo] DROP CONSTRAINT [FK_DepartmentActionInfo_ActionInfo];
+GO
+IF OBJECT_ID(N'[dbo].[FK_DepartmentActionInfo_Department]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[DepartmentActionInfo] DROP CONSTRAINT [FK_DepartmentActionInfo_Department];
+GO
+IF OBJECT_ID(N'[dbo].[FK_RoleInfoActionInfo_ActionInfo]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[RoleInfoActionInfo] DROP CONSTRAINT [FK_RoleInfoActionInfo_ActionInfo];
+GO
+IF OBJECT_ID(N'[dbo].[FK_RoleInfoActionInfo_RoleInfo]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[RoleInfoActionInfo] DROP CONSTRAINT [FK_RoleInfoActionInfo_RoleInfo];
+GO
+IF OBJECT_ID(N'[dbo].[FK_UserInfoDepartment_Department]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[UserInfoDepartment] DROP CONSTRAINT [FK_UserInfoDepartment_Department];
+GO
+IF OBJECT_ID(N'[dbo].[FK_UserInfoDepartment_UserInfo]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[UserInfoDepartment] DROP CONSTRAINT [FK_UserInfoDepartment_UserInfo];
+GO
+IF OBJECT_ID(N'[dbo].[FK_UserInfoR_UserInfo_ActionInfo]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[R_UserInfo_ActionInfo] DROP CONSTRAINT [FK_UserInfoR_UserInfo_ActionInfo];
+GO
+IF OBJECT_ID(N'[dbo].[FK_UserInfoRoleInfo_RoleInfo]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[UserInfoRoleInfo] DROP CONSTRAINT [FK_UserInfoRoleInfo_RoleInfo];
+GO
+IF OBJECT_ID(N'[dbo].[FK_UserInfoRoleInfo_UserInfo]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[UserInfoRoleInfo] DROP CONSTRAINT [FK_UserInfoRoleInfo_UserInfo];
+GO
 
 -- --------------------------------------------------
 -- Dropping existing tables
 -- --------------------------------------------------
 
+IF OBJECT_ID(N'[dbo].[ActionInfo]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[ActionInfo];
+GO
+IF OBJECT_ID(N'[dbo].[Books]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Books];
+GO
+IF OBJECT_ID(N'[dbo].[Department]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Department];
+GO
+IF OBJECT_ID(N'[dbo].[DepartmentActionInfo]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[DepartmentActionInfo];
+GO
+IF OBJECT_ID(N'[dbo].[R_UserInfo_ActionInfo]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[R_UserInfo_ActionInfo];
+GO
+IF OBJECT_ID(N'[dbo].[RoleInfo]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[RoleInfo];
+GO
+IF OBJECT_ID(N'[dbo].[RoleInfoActionInfo]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[RoleInfoActionInfo];
+GO
 IF OBJECT_ID(N'[dbo].[UserInfo]', 'U') IS NOT NULL
     DROP TABLE [dbo].[UserInfo];
+GO
+IF OBJECT_ID(N'[dbo].[UserInfoDepartment]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[UserInfoDepartment];
+GO
+IF OBJECT_ID(N'[dbo].[UserInfoRoleInfo]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[UserInfoRoleInfo];
 GO
 
 -- --------------------------------------------------
@@ -95,6 +152,41 @@ CREATE TABLE [dbo].[RoleInfo] (
 );
 GO
 
+-- Creating table 'Books'
+CREATE TABLE [dbo].[Books] (
+    [Id] int IDENTITY(1,1) NOT NULL,
+    [Title] nvarchar(200)  NOT NULL,
+    [Author] nvarchar(200)  NOT NULL,
+    [PublisherId] int  NOT NULL,
+    [PublishDate] datetime  NOT NULL,
+    [ISBN] nvarchar(50)  NOT NULL,
+    [WordsCount] int  NOT NULL,
+    [UnitPrice] decimal(19,4)  NOT NULL,
+    [ContentDescription] nvarchar(max)  NULL,
+    [AurhorDescription] nvarchar(max)  NULL,
+    [EditorComment] nvarchar(max)  NULL,
+    [TOC] nvarchar(max)  NULL,
+    [CategoryId] int  NOT NULL,
+    [Clicks] int  NOT NULL
+);
+GO
+
+-- Creating table 'KeyWordsRank'
+CREATE TABLE [dbo].[KeyWordsRank] (
+    [Id] uniqueidentifier  NOT NULL,
+    [KeyWords] nvarchar(255)  NULL,
+    [SearchCount] int  NULL
+);
+GO
+
+-- Creating table 'SearchDetails'
+CREATE TABLE [dbo].[SearchDetails] (
+    [Id] uniqueidentifier  NOT NULL,
+    [KeyWords] nvarchar(255)  NULL,
+    [SearchDateTime] datetime  NULL
+);
+GO
+
 -- Creating table 'UserInfoDepartment'
 CREATE TABLE [dbo].[UserInfoDepartment] (
     [Department_ID] int  NOT NULL,
@@ -155,6 +247,24 @@ GO
 ALTER TABLE [dbo].[RoleInfo]
 ADD CONSTRAINT [PK_RoleInfo]
     PRIMARY KEY CLUSTERED ([ID] ASC);
+GO
+
+-- Creating primary key on [Id] in table 'Books'
+ALTER TABLE [dbo].[Books]
+ADD CONSTRAINT [PK_Books]
+    PRIMARY KEY CLUSTERED ([Id] ASC);
+GO
+
+-- Creating primary key on [Id] in table 'KeyWordsRank'
+ALTER TABLE [dbo].[KeyWordsRank]
+ADD CONSTRAINT [PK_KeyWordsRank]
+    PRIMARY KEY CLUSTERED ([Id] ASC);
+GO
+
+-- Creating primary key on [Id] in table 'SearchDetails'
+ALTER TABLE [dbo].[SearchDetails]
+ADD CONSTRAINT [PK_SearchDetails]
+    PRIMARY KEY CLUSTERED ([Id] ASC);
 GO
 
 -- Creating primary key on [Department_ID], [UserInfo_ID] in table 'UserInfoDepartment'

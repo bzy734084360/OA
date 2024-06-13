@@ -1,3 +1,5 @@
+using BZY.OA.Common;
+using BZY.OA.WebApp.JobScheduler;
 using BZY.OA.WebApp.Models;
 using log4net;
 using log4net.Config;
@@ -55,6 +57,24 @@ namespace BZY.OA.WebApp
                     }
                 }
             }, filterPath);
+
+            //开启lucene.net线程
+            IndexManager.GetInstance().StartThread();
+            //定时统计热词
+            SyncHotKeyWordsInfo();
+        }
+        /// <summary>
+        /// 定时统计热词
+        /// </summary>
+        private void SyncHotKeyWordsInfo()
+        {
+            //定时统计热词50分钟触发一次
+            const string cronExprToDo = "0 0/50 * * * ?";
+            if (JobHelper.CreateJob("SyncHotKeyWordsInfoJob", "定时统计热词", typeof(SyncHotKeyWordsInfoJob), "定时统计热词", Guid.NewGuid().ToString(), cronExprToDo))
+            {
+                var sched = Scheduler.GetIntance();
+                sched.Start();
+            }
         }
     }
 }

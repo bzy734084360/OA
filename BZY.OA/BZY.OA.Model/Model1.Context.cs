@@ -31,5 +31,7 @@ namespace BZY.OA.Model
         public virtual DbSet<R_UserInfo_ActionInfo> R_UserInfo_ActionInfo { get; set; }
         public virtual DbSet<RoleInfo> RoleInfo { get; set; }
         public virtual DbSet<Books> Books { get; set; }
+        public virtual DbSet<KeyWordsRank> KeyWordsRank { get; set; }
+        public virtual DbSet<SearchDetails> SearchDetails { get; set; }
     }
 }

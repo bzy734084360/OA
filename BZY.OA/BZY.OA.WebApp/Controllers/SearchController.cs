@@ -21,6 +21,8 @@ namespace BZY.OA.WebApp.Controllers
         //
         // GET: /Search/
         IBooksService BooksService { get; set; }
+        ISearchDetailsService SearchDetailsService { get; set; }
+        IKeyWordsRankService KeyWordsRankService { get; set; }
         public ActionResult Index()
         {
             return View();
@@ -75,6 +77,12 @@ namespace BZY.OA.WebApp.Controllers
                 viewModel.Content = WebCommon.CreateHightLight(Request["txtSearch"], doc.Get("Content"));//将搜索的关键字高亮显示。
                 viewModelList.Add(viewModel);
             }
+            //先将搜索的词插入到明细表。
+            SearchDetails searchDetail = new SearchDetails();
+            searchDetail.Id = Guid.NewGuid();
+            searchDetail.KeyWords = Request["txtSearch"];
+            searchDetail.SearchDateTime = DateTime.Now;
+            SearchDetailsService.AddEntity(searchDetail);
             return viewModelList;
         }
 
@@ -110,6 +118,13 @@ namespace BZY.OA.WebApp.Controllers
             //}
             //writer.Close();//会自动解锁。
             //directory.Close();//不要忘了C
+        }
+        public ActionResult AutoComplete()
+        {
+            //Thread.Sleep(5000);
+            string term = Request["term"];
+            List<string> list = KeyWordsRankService.GetSearchMsg(term);
+            return Json(list.ToArray(), JsonRequestBehavior.AllowGet);
         }
     }
 }

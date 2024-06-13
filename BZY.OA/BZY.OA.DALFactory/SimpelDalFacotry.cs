@@ -40,6 +40,14 @@ namespace BZY.OA.DALFactory
 
         }
 		
+	    public static IKeyWordsRankDal CreateKeyWordsRankDal()
+        {
+
+		 string fullClassName = NameSpace + ".KeyWordsRankDal";
+          return CreateInstance(fullClassName) as IKeyWordsRankDal;
+
+        }
+		
 	    public static IR_UserInfo_ActionInfoDal CreateR_UserInfo_ActionInfoDal()
         {
 
@@ -53,6 +61,14 @@ namespace BZY.OA.DALFactory
 
 		 string fullClassName = NameSpace + ".RoleInfoDal";
           return CreateInstance(fullClassName) as IRoleInfoDal;
+
+        }
+		
+	    public static ISearchDetailsDal CreateSearchDetailsDal()
+        {
+
+		 string fullClassName = NameSpace + ".SearchDetailsDal";
+          return CreateInstance(fullClassName) as ISearchDetailsDal;
 
         }
 		

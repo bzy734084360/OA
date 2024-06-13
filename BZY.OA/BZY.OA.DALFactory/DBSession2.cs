@@ -56,6 +56,20 @@ namespace BZY.OA.DALFactory
             set { _DepartmentDal = value; }
         }
 	
+		private IKeyWordsRankDal _KeyWordsRankDal;
+        public IKeyWordsRankDal KeyWordsRankDal
+        {
+            get
+            {
+                if(_KeyWordsRankDal == null)
+                {
+                    _KeyWordsRankDal = AbstractFactory.CreateKeyWordsRankDal();
+                }
+                return _KeyWordsRankDal;
+            }
+            set { _KeyWordsRankDal = value; }
+        }
+	
 		private IR_UserInfo_ActionInfoDal _R_UserInfo_ActionInfoDal;
         public IR_UserInfo_ActionInfoDal R_UserInfo_ActionInfoDal
         {
@@ -82,6 +96,20 @@ namespace BZY.OA.DALFactory
                 return _RoleInfoDal;
             }
             set { _RoleInfoDal = value; }
+        }
+	
+		private ISearchDetailsDal _SearchDetailsDal;
+        public ISearchDetailsDal SearchDetailsDal
+        {
+            get
+            {
+                if(_SearchDetailsDal == null)
+                {
+                    _SearchDetailsDal = AbstractFactory.CreateSearchDetailsDal();
+                }
+                return _SearchDetailsDal;
+            }
+            set { _SearchDetailsDal = value; }
         }
 	
 		private IUserInfoDal _UserInfoDal;

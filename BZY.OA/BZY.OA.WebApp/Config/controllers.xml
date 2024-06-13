@@ -22,6 +22,8 @@
 	</object>
 	<object name="SearchController" type="BZY.OA.WebApp.Controllers.SearchController,BZY.OA.WebApp" singleton="false" >
 		<property name="BooksService" ref="BooksService" />
+		<property name="SearchDetailsService" ref="SearchDetailsService" />
+		<property name="KeyWordsRankService" ref="KeyWordsRankService" />
 	</object>
 	
 

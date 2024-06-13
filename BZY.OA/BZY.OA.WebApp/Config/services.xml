@@ -10,5 +10,8 @@
 	</object>
 	<object name="BooksService"  type="BZY.OA.BLL.BooksService, BZY.OA.BLL" singleton="false" >
 	</object>
-	
+	<object name="SearchDetailsService"  type="BZY.OA.BLL.SearchDetailsService, BZY.OA.BLL" singleton="false" >
+	</object>
+	<object name="KeyWordsRankService"  type="BZY.OA.BLL.KeyWordsRankService, BZY.OA.BLL" singleton="false" >
+	</object>
 </objects>

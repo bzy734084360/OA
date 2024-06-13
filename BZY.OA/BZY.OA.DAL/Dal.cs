@@ -26,12 +26,22 @@ namespace BZY.OA.DAL
 
     }
 		
+	public partial class KeyWordsRankDal :BaseDal<KeyWordsRank>,IKeyWordsRankDal
+    {
+
+    }
+		
 	public partial class R_UserInfo_ActionInfoDal :BaseDal<R_UserInfo_ActionInfo>,IR_UserInfo_ActionInfoDal
     {
 
     }
 		
 	public partial class RoleInfoDal :BaseDal<RoleInfo>,IRoleInfoDal
+    {
+
+    }
+		
+	public partial class SearchDetailsDal :BaseDal<SearchDetails>,ISearchDetailsDal
     {
 
     }
