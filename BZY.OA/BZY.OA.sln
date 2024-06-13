@@ -25,6 +25,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BZY.OA.SpringNet", "BZY.OA.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BZY.OA.MemcacheDemo", "BZY.OA.MemcacheDemo\BZY.OA.MemcacheDemo.csproj", "{CEA98723-159D-4B18-8594-25627D060313}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BZY.OA.LuceneNetDemo", "BZY.OA.LuceneNetDemo\BZY.OA.LuceneNetDemo.csproj", "{EBE6F2F4-4FE3-47F1-9E8B-2D04C3602D4D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -71,6 +73,10 @@ Global
 		{CEA98723-159D-4B18-8594-25627D060313}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CEA98723-159D-4B18-8594-25627D060313}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CEA98723-159D-4B18-8594-25627D060313}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EBE6F2F4-4FE3-47F1-9E8B-2D04C3602D4D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EBE6F2F4-4FE3-47F1-9E8B-2D04C3602D4D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EBE6F2F4-4FE3-47F1-9E8B-2D04C3602D4D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EBE6F2F4-4FE3-47F1-9E8B-2D04C3602D4D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -78,6 +84,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{84E13D6C-60CF-48A6-A554-0C7764D44C54} = {934CD80C-2D14-4EB1-9905-AB03FEBA04C7}
 		{CEA98723-159D-4B18-8594-25627D060313} = {934CD80C-2D14-4EB1-9905-AB03FEBA04C7}
+		{EBE6F2F4-4FE3-47F1-9E8B-2D04C3602D4D} = {934CD80C-2D14-4EB1-9905-AB03FEBA04C7}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E0E352D3-1B9A-43DF-9B9C-480A60A55E58}

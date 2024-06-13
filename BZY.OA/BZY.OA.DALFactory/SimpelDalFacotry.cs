@@ -1,4 +1,6 @@
-﻿using BZY.OA.IDAL;
+﻿ 
+
+using BZY.OA.IDAL;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -11,48 +13,56 @@ namespace BZY.OA.DALFactory
 {
     public partial class AbstractFactory
     {
-
-
-
-        public static IActionInfoDal CreateActionInfoDal()
+      
+   
+		
+	    public static IActionInfoDal CreateActionInfoDal()
         {
 
-            string fullClassName = NameSpace + ".ActionInfoDal";
-            return CreateInstance(fullClassName) as IActionInfoDal;
+		 string fullClassName = NameSpace + ".ActionInfoDal";
+          return CreateInstance(fullClassName) as IActionInfoDal;
 
         }
-
-        public static IDepartmentDal CreateDepartmentDal()
+		
+	    public static IBooksDal CreateBooksDal()
         {
 
-            string fullClassName = NameSpace + ".DepartmentDal";
-            return CreateInstance(fullClassName) as IDepartmentDal;
+		 string fullClassName = NameSpace + ".BooksDal";
+          return CreateInstance(fullClassName) as IBooksDal;
 
         }
-
-        public static IR_UserInfo_ActionInfoDal CreateR_UserInfo_ActionInfoDal()
+		
+	    public static IDepartmentDal CreateDepartmentDal()
         {
 
-            string fullClassName = NameSpace + ".R_UserInfo_ActionInfoDal";
-            return CreateInstance(fullClassName) as IR_UserInfo_ActionInfoDal;
+		 string fullClassName = NameSpace + ".DepartmentDal";
+          return CreateInstance(fullClassName) as IDepartmentDal;
 
         }
-
-        public static IRoleInfoDal CreateRoleInfoDal()
+		
+	    public static IR_UserInfo_ActionInfoDal CreateR_UserInfo_ActionInfoDal()
         {
 
-            string fullClassName = NameSpace + ".RoleInfoDal";
-            return CreateInstance(fullClassName) as IRoleInfoDal;
+		 string fullClassName = NameSpace + ".R_UserInfo_ActionInfoDal";
+          return CreateInstance(fullClassName) as IR_UserInfo_ActionInfoDal;
 
         }
-
-        public static IUserInfoDal CreateUserInfoDal()
+		
+	    public static IRoleInfoDal CreateRoleInfoDal()
         {
 
-            string fullClassName = NameSpace + ".UserInfoDal";
-            return CreateInstance(fullClassName) as IUserInfoDal;
+		 string fullClassName = NameSpace + ".RoleInfoDal";
+          return CreateInstance(fullClassName) as IRoleInfoDal;
 
         }
-    }
+		
+	    public static IUserInfoDal CreateUserInfoDal()
+        {
 
+		 string fullClassName = NameSpace + ".UserInfoDal";
+          return CreateInstance(fullClassName) as IUserInfoDal;
+
+        }
+	}
+	
 }

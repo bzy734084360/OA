@@ -8,4 +8,7 @@
 	</object>
 	<object name="R_UserInfo_ActionInfoService"  type="BZY.OA.BLL.R_UserInfo_ActionInfoService, BZY.OA.BLL" singleton="false" >
 	</object>
+	<object name="BooksService"  type="BZY.OA.BLL.BooksService, BZY.OA.BLL" singleton="false" >
+	</object>
+	
 </objects>

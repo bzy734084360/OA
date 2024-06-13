@@ -28,6 +28,20 @@ namespace BZY.OA.DALFactory
             set { _ActionInfoDal = value; }
         }
 	
+		private IBooksDal _BooksDal;
+        public IBooksDal BooksDal
+        {
+            get
+            {
+                if(_BooksDal == null)
+                {
+                    _BooksDal = AbstractFactory.CreateBooksDal();
+                }
+                return _BooksDal;
+            }
+            set { _BooksDal = value; }
+        }
+	
 		private IDepartmentDal _DepartmentDal;
         public IDepartmentDal DepartmentDal
         {
