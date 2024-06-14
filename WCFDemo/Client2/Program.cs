@@ -10,7 +10,7 @@ namespace Client2
     {
         static void Main(string[] args)
         {
-            ServiceReference1.UserInfoServiceClient client = new ServiceReference1.UserInfoServiceClient();
+            ServiceReference2.UserInfoServiceClient client = new ServiceReference2.UserInfoServiceClient();
             int sum = client.Add(3, 6);
             Console.WriteLine(sum);
             Console.ReadKey();

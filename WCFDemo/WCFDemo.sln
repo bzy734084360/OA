@@ -12,6 +12,11 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Client", "Client\Client.csproj", "{CBBAD321-C23B-4BC1-B9BD-8D18F3E3A543}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Client2", "Client2\Client2.csproj", "{3775297D-FF21-447F-BBA4-826616892EC5}"
+	ProjectSection(ProjectDependencies) = postProject
+		{03E8F008-3F9C-48CB-A709-167B54CBA52B} = {03E8F008-3F9C-48CB-A709-167B54CBA52B}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WCFTOIIS", "WCFTOIIS\WCFTOIIS.csproj", "{03E8F008-3F9C-48CB-A709-167B54CBA52B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +44,10 @@ Global
 		{3775297D-FF21-447F-BBA4-826616892EC5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3775297D-FF21-447F-BBA4-826616892EC5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3775297D-FF21-447F-BBA4-826616892EC5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{03E8F008-3F9C-48CB-A709-167B54CBA52B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{03E8F008-3F9C-48CB-A709-167B54CBA52B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{03E8F008-3F9C-48CB-A709-167B54CBA52B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{03E8F008-3F9C-48CB-A709-167B54CBA52B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
