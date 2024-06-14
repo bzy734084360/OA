@@ -27,6 +27,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BZY.OA.MemcacheDemo", "BZY.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BZY.OA.LuceneNetDemo", "BZY.OA.LuceneNetDemo\BZY.OA.LuceneNetDemo.csproj", "{EBE6F2F4-4FE3-47F1-9E8B-2D04C3602D4D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BZY.OA.WebService", "BZY.OA.WebService\BZY.OA.WebService.csproj", "{B5EA3FF8-3057-4884-8083-73430F3C6CDA}"
+	ProjectSection(ProjectDependencies) = postProject
+		{D0628D2A-C4F4-416E-A4DD-BF340F715E03} = {D0628D2A-C4F4-416E-A4DD-BF340F715E03}
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -77,6 +82,10 @@ Global
 		{EBE6F2F4-4FE3-47F1-9E8B-2D04C3602D4D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EBE6F2F4-4FE3-47F1-9E8B-2D04C3602D4D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EBE6F2F4-4FE3-47F1-9E8B-2D04C3602D4D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B5EA3FF8-3057-4884-8083-73430F3C6CDA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B5EA3FF8-3057-4884-8083-73430F3C6CDA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B5EA3FF8-3057-4884-8083-73430F3C6CDA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B5EA3FF8-3057-4884-8083-73430F3C6CDA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
