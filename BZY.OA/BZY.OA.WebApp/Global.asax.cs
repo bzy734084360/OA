@@ -1,4 +1,5 @@
 using BZY.OA.Common;
+using BZY.OA.Common.Cache;
 using BZY.OA.WebApp.JobScheduler;
 using BZY.OA.WebApp.Models;
 using log4net;
@@ -36,15 +37,37 @@ namespace BZY.OA.WebApp
             {
                 while (true)
                 {
+
                     //判断一下队列中是否有数据
-                    if (MyExceptionAttribute.ExceptionQueue.Count > 0)
+                    //if (MyExceptionAttribute.ExceptionQueue.Count > 0)
+                    //{
+                    //    Exception ex = MyExceptionAttribute.ExceptionQueue.Dequeue();
+                    //    if (ex != null)
+                    //    {
+                    //        //将异常信息写到日志文件中
+                    //        ILog logger = LogManager.GetLogger("errorMsg");
+                    //        logger.Error(ex.ToString());
+                    //    }
+                    //    else
+                    //    {
+                    //        Thread.Sleep(3000);
+                    //    }
+                    //}
+                    //else
+                    //{
+                    //    Thread.Sleep(3000);
+                    //}
+                    //Redis队列使用
+                    if (RedisCacheHepler.List_Count("errorQueue") > 0)
                     {
-                        Exception ex = MyExceptionAttribute.ExceptionQueue.Dequeue();
-                        if (ex != null)
+
+                        string errorMsg = RedisCacheHepler.DequeueItemFromList("errorQueue");
+                        //Exception ex = MyExceptionAttribute.ExceptionQueue.Dequeue();
+                        if (!string.IsNullOrEmpty(errorMsg))
                         {
                             //将异常信息写到日志文件中
                             ILog logger = LogManager.GetLogger("errorMsg");
-                            logger.Error(ex.ToString());
+                            logger.Error(errorMsg);
                         }
                         else
                         {

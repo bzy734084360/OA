@@ -1,4 +1,5 @@
 ﻿using BZY.OA.Common;
+using BZY.OA.Common.Cache;
 using BZY.OA.IBLL;
 using System;
 using System.Collections.Generic;
@@ -43,8 +44,10 @@ namespace BZY.OA.WebApp.Controllers
                 //Session["userInfo"] = userInfo;
                 //产生一个guid作为memache的键
                 string sessionId = Guid.NewGuid().ToString();
+                //缓存工厂进行初始化Redis缓存调用 嵌套调用依然不能用泛型 只能string
+                CacheFactory.Cache().WriteCache(SerializeHelper.SerializeToString(userInfo), sessionId, DateTime.Now.AddMinutes(20));
                 //添加缓存信息
-                MemcacheHelper.Set(sessionId, SerializeHelper.SerializeToString(userInfo), DateTime.Now.AddMinutes(20));
+                //MemcacheHelper.Set(sessionId, SerializeHelper.SerializeToString(userInfo), DateTime.Now.AddMinutes(20));
                 //将Memcache的key以Cookie的形式返回给浏览器。
                 Response.Cookies["sessionId"].Value = sessionId;
                 return Content("ok:登陆成功");

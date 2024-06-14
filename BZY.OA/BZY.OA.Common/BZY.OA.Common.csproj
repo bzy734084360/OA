@@ -69,6 +69,19 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Lib\Quartz.dll</HintPath>
     </Reference>
+    <Reference Include="ServiceStack.Common">
+      <HintPath>..\Lib\ServiceStack.Common.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="ServiceStack.Interfaces">
+      <HintPath>..\Lib\ServiceStack.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.Redis">
+      <HintPath>..\Lib\ServiceStack.Redis.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.Text">
+      <HintPath>..\Lib\ServiceStack.Text.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
@@ -83,13 +96,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Cache\WebCache.cs" />
+    <Compile Include="Cache\CacheFactory.cs" />
+    <Compile Include="Cache\ICache.cs" />
+    <Compile Include="Cache\RedisCache.cs" />
+    <Compile Include="EnumDescription.cs" />
+    <Compile Include="EnumExtensions.cs" />
+    <Compile Include="Enum\CacheTypeEnum.cs" />
     <Compile Include="JobScheduler\JobHelper.cs" />
     <Compile Include="JobScheduler\Scheduler.cs" />
     <Compile Include="JsonConvertor\UnixDateTimeConvertor.cs" />
     <Compile Include="JsonHelper.cs" />
     <Compile Include="MemcacheHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Cache\RedisCacheHepler.cs" />
+    <Compile Include="Cache\RedisConfigInfo.cs" />
     <Compile Include="SerializeHelper.cs" />
+    <Compile Include="SystemInfo.ServerConfig.cs" />
     <Compile Include="ValidateCode.cs" />
     <Compile Include="WebCommon.cs" />
   </ItemGroup>

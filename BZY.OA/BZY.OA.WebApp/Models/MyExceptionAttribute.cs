@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BZY.OA.Common.Cache;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -12,7 +13,7 @@ namespace BZY.OA.WebApp.Models
     public class MyExceptionAttribute : HandleErrorAttribute
     {
         //创建一个队列
-        public static Queue<Exception> ExceptionQueue = new Queue<Exception>();
+        //public static Queue<Exception> ExceptionQueue = new Queue<Exception>();
         /// <summary>
         /// 可以捕获异常数据
         /// </summary>
@@ -22,7 +23,8 @@ namespace BZY.OA.WebApp.Models
             base.OnException(filterContext);
             Exception ex = filterContext.Exception;
             //写入队列
-            ExceptionQueue.Enqueue(ex);
+            //ExceptionQueue.Enqueue(ex);
+            RedisCacheHepler.EnqueueItemOnList("errorQueue", ex.ToString());
             //跳转至错误页面
             filterContext.HttpContext.Response.Redirect("/Error.html");
         }

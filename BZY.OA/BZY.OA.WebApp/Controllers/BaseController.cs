@@ -1,4 +1,5 @@
 ﻿using BZY.OA.Common;
+using BZY.OA.Common.Cache;
 using BZY.OA.IBLL;
 using BZY.OA.Model;
 using Spring.Context;
@@ -39,14 +40,19 @@ namespace BZY.OA.WebApp.Controllers
             {
                 string sessionId = Request.Cookies["sessionId"].Value;
                 //检验缓存中是否存储了用户登录信息
-                object obj = MemcacheHelper.Get(sessionId);
+
+                object obj = CacheFactory.Cache().GetCache<string>(sessionId);
+
+                //object obj = MemcacheHelper.Get(sessionId);
                 if (obj != null)
                 {
                     UserInfo userInfo = SerializeHelper.DeserializeToObject<UserInfo>(obj.ToString());
                     LoginUser = userInfo;
                     isSuccess = true;
                     //模拟出滑动过期时间.
-                    MemcacheHelper.Set(sessionId, obj, DateTime.Now.AddMinutes(20));
+                    //MemcacheHelper.Set(sessionId, obj, DateTime.Now.AddMinutes(20));
+
+                    CacheFactory.Cache().WriteCache(obj, sessionId, DateTime.Now.AddMinutes(20));
 
                     //留一个后门，测试方便。发布的时候一定要删除该代码。
                     if (LoginUser.UName == "管理员")
