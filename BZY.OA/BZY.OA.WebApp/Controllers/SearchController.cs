@@ -58,9 +58,18 @@ namespace BZY.OA.WebApp.Controllers
             {
                 query.Add(new Term("Content", word));
             }
+            //多条件查询：
+            //PhraseQuery title = new PhraseQuery();
+            //query.Add(new Term("title", "测试多条件查询标题"));
+            //PhraseQuery msg = new PhraseQuery();
+            //query.Add(new Term("msg", "测试多条件查询标题"));
+            //BooleanQuery booleanQuery = new BooleanQuery();
+            //booleanQuery.Add(title, BooleanClause.Occur.SHOULD);
+            //booleanQuery.Add(msg, BooleanClause.Occur.SHOULD);
             query.SetSlop(100);//多个查询条件的词之间的最大距离.在文章中相隔太远 也就无意义.（例如 “大学生”这个查询条件和"简历"这个查询条件之间如果间隔的词太多也就没有意义了。）
                                //TopScoreDocCollector是盛放查询结果的容器
             TopScoreDocCollector collector = TopScoreDocCollector.create(1000, true);
+            // booleanQuery 替换query 
             searcher.Search(query, null, collector);//根据query查询条件进行查询，查询结果放入collector容器
             ScoreDoc[] docs = collector.TopDocs(0, collector.GetTotalHits()).scoreDocs;//得到所有查询结果中的文档,GetTotalHits():表示总条数   TopDocs(300, 20);//表示得到300（从300开始），到320（结束）的文档内容.
                                                                                        //可以用来实现分页功能
