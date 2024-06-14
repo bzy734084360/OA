@@ -1,0 +1,9 @@
+F:\于富\git管理代码\OA\WCFDemo\BLL\bin\Debug\BLL.dll
+F:\于富\git管理代码\OA\WCFDemo\BLL\bin\Debug\BLL.pdb
+F:\于富\git管理代码\OA\WCFDemo\BLL\bin\Debug\IBLL.dll
+F:\于富\git管理代码\OA\WCFDemo\BLL\bin\Debug\IBLL.pdb
+F:\于富\git管理代码\OA\WCFDemo\BLL\obj\Debug\BLL.csproj.AssemblyReference.cache
+F:\于富\git管理代码\OA\WCFDemo\BLL\obj\Debug\BLL.csproj.CoreCompileInputs.cache
+F:\于富\git管理代码\OA\WCFDemo\BLL\obj\Debug\BLL.csproj.CopyComplete
+F:\于富\git管理代码\OA\WCFDemo\BLL\obj\Debug\BLL.dll
+F:\于富\git管理代码\OA\WCFDemo\BLL\obj\Debug\BLL.pdb
