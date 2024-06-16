@@ -1,0 +1,10 @@
+F:\于富\git管理代码\OA\WebAPI-Signal-Task\AspNetWebAPI\WebAPIStudy\TaskCodeToWinfom\bin\Debug\TaskCodeToWinfom.exe.config
+F:\于富\git管理代码\OA\WebAPI-Signal-Task\AspNetWebAPI\WebAPIStudy\TaskCodeToWinfom\bin\Debug\TaskCodeToWinfom.exe
+F:\于富\git管理代码\OA\WebAPI-Signal-Task\AspNetWebAPI\WebAPIStudy\TaskCodeToWinfom\bin\Debug\TaskCodeToWinfom.pdb
+F:\于富\git管理代码\OA\WebAPI-Signal-Task\AspNetWebAPI\WebAPIStudy\TaskCodeToWinfom\obj\Debug\TaskCodeToWinfom.csproj.AssemblyReference.cache
+F:\于富\git管理代码\OA\WebAPI-Signal-Task\AspNetWebAPI\WebAPIStudy\TaskCodeToWinfom\obj\Debug\TaskCodeToWinfom.Form1.resources
+F:\于富\git管理代码\OA\WebAPI-Signal-Task\AspNetWebAPI\WebAPIStudy\TaskCodeToWinfom\obj\Debug\TaskCodeToWinfom.Properties.Resources.resources
+F:\于富\git管理代码\OA\WebAPI-Signal-Task\AspNetWebAPI\WebAPIStudy\TaskCodeToWinfom\obj\Debug\TaskCodeToWinfom.csproj.GenerateResource.cache
+F:\于富\git管理代码\OA\WebAPI-Signal-Task\AspNetWebAPI\WebAPIStudy\TaskCodeToWinfom\obj\Debug\TaskCodeToWinfom.csproj.CoreCompileInputs.cache
+F:\于富\git管理代码\OA\WebAPI-Signal-Task\AspNetWebAPI\WebAPIStudy\TaskCodeToWinfom\obj\Debug\TaskCodeToWinfom.exe
+F:\于富\git管理代码\OA\WebAPI-Signal-Task\AspNetWebAPI\WebAPIStudy\TaskCodeToWinfom\obj\Debug\TaskCodeToWinfom.pdb

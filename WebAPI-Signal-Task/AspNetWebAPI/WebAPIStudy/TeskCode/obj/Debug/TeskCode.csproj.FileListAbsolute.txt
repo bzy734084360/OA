@@ -1,0 +1,7 @@
+F:\于富\git管理代码\OA\WebAPI-Signal-Task\AspNetWebAPI\WebAPIStudy\TeskCode\bin\Debug\TeskCode.exe.config
+F:\于富\git管理代码\OA\WebAPI-Signal-Task\AspNetWebAPI\WebAPIStudy\TeskCode\bin\Debug\TeskCode.exe
+F:\于富\git管理代码\OA\WebAPI-Signal-Task\AspNetWebAPI\WebAPIStudy\TeskCode\bin\Debug\TeskCode.pdb
+F:\于富\git管理代码\OA\WebAPI-Signal-Task\AspNetWebAPI\WebAPIStudy\TeskCode\obj\Debug\TeskCode.csproj.AssemblyReference.cache
+F:\于富\git管理代码\OA\WebAPI-Signal-Task\AspNetWebAPI\WebAPIStudy\TeskCode\obj\Debug\TeskCode.csproj.CoreCompileInputs.cache
+F:\于富\git管理代码\OA\WebAPI-Signal-Task\AspNetWebAPI\WebAPIStudy\TeskCode\obj\Debug\TeskCode.exe
+F:\于富\git管理代码\OA\WebAPI-Signal-Task\AspNetWebAPI\WebAPIStudy\TeskCode\obj\Debug\TeskCode.pdb

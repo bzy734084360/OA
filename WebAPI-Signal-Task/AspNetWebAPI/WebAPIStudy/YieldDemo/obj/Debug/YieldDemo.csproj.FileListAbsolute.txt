@@ -1,0 +1,7 @@
+F:\于富\git管理代码\OA\WebAPI-Signal-Task\AspNetWebAPI\WebAPIStudy\YieldDemo\bin\Debug\YieldDemo.exe.config
+F:\于富\git管理代码\OA\WebAPI-Signal-Task\AspNetWebAPI\WebAPIStudy\YieldDemo\bin\Debug\YieldDemo.exe
+F:\于富\git管理代码\OA\WebAPI-Signal-Task\AspNetWebAPI\WebAPIStudy\YieldDemo\bin\Debug\YieldDemo.pdb
+F:\于富\git管理代码\OA\WebAPI-Signal-Task\AspNetWebAPI\WebAPIStudy\YieldDemo\obj\Debug\YieldDemo.csproj.CoreCompileInputs.cache
+F:\于富\git管理代码\OA\WebAPI-Signal-Task\AspNetWebAPI\WebAPIStudy\YieldDemo\obj\Debug\YieldDemo.exe
+F:\于富\git管理代码\OA\WebAPI-Signal-Task\AspNetWebAPI\WebAPIStudy\YieldDemo\obj\Debug\YieldDemo.pdb
+F:\于富\git管理代码\OA\WebAPI-Signal-Task\AspNetWebAPI\WebAPIStudy\YieldDemo\obj\Debug\YieldDemo.csproj.AssemblyReference.cache
